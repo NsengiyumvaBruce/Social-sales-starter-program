@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f4f7f3;
+  --surface: #ffffff;
+  --surface-alt: #eef3ed;
+  --ink: #0f1f1a;
+  --muted: #46574f;
+  --line: #d3dcd6;
+  --accent: #1b4fb8;
+  --accent-hover: #153e94;
+  --accent-ink: #ffffff;
+  --sun: #fff1c2;
+  --sun-border: #e6cc75;
+  --sun-ink: #1a1708;
+  --leaf: #1e6f46;
+  --leaf-soft: #ddf1e5;
+  --warn: #9a3412;
+  --warn-soft: #fde8dc;
+  --font-display: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0c1512;
+  --surface: #131e1a;
+  --surface-alt: #192722;
+  --ink: #eaf1ed;
+  --muted: #a6b6ae;
+  --line: #27372f;
+  --accent: #8fb3ff;
+  --accent-hover: #abc6ff;
+  --accent-ink: #0c1512;
+  --sun: #2b250e;
+  --sun-border: #594b19;
+  --sun-ink: #f6ebc0;
+  --leaf: #6edba2;
+  --leaf-soft: #12301f;
+  --warn: #ffb38a;
+  --warn-soft: #3a1d0f;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Active read-aloud highlight */
+.reading-active {
+  background-color: var(--sun);
+  color: var(--sun-ink);
+  border-radius: 6px;
+  box-shadow: 0 0 0 6px var(--sun);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+/* Print layout rules */
+.print-sheet {
+  display: none;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body[data-print="summary"] .app-shell {
+    display: none !important;
+  }
+
+  body[data-print="summary"] .print-sheet {
+    display: block !important;
+    color: #111111;
+    background: #ffffff;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

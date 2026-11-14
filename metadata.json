@@ -1,0 +1,8 @@
+{
+  "name": "Remix Social Sales Starter",
+  "description": "A free, practical 7-lesson self-paced course on selling with social media. Written lessons, audio playback, and interactive practice tools by Nsengiyumva Bruce of Bruce Digital 360, Kigali.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
